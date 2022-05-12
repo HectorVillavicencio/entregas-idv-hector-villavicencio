@@ -1,16 +1,21 @@
 extends "res://entities/AbstractState.gd"
 
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func enter ():
+	parent.velocity.y = -parent.jump_speed
+	parent.snap_vector = Vector2.ZERO
+	
+	
+func update(delta:float):
+	parent._handle_cannon_actions()
+	parent._handle_move_input()
+	if parent.move_direction == 0:
+		parent._handle_deacceleration()
+	
+	parent._apply_movement()
+	
+	if parent.is_on_floor():
+		if parent.move_direction != 0:
+			emit_signal("finished", "walk")
+		else:
+			emit_signal("finished", "idle")
