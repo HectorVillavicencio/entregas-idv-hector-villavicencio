@@ -2,18 +2,23 @@ extends KinematicBody2D
 
 onready var fire_position = $FirePosition
 onready var fire_timer = $FireTimer
+onready var idle_timer:Timer =$idleTime
 onready var raycast = $FirePosition/RayCast2D
 
 onready var detection_area:Area2D = $DetectionArea
 
 export (PackedScene) var projectile_scene
+export (Vector2) var wandering_range:Vector2
 
 var target
 var projectile_container
 
+var pathfinding : PathfindAstar
+
 func _ready():
 	fire_timer.connect("timeout", self, "fire")
 	set_physics_process(false)
+	idle_timer.star()
 
 func initialize(container, turret_pos, projectile_container):
 	container.add_child(self)
@@ -60,3 +65,9 @@ func _on_DetectionArea_body_exited(body):
 		target = null
 		set_physics_process(false)
 
+
+
+func _on_IdleTimer_timeout():
+	var pont:Vector2 = Vector2(rand_
+	range(-wandering_range.x, wandering_range.x), rand_range(-wandering_range.y))
+	var path:Array = pathfinding.get_simple_path()
