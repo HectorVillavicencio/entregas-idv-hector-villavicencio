@@ -3,6 +3,13 @@ extends Node
 
 export (NodePath) var pathfinding: NodePath
 
+export (bool) var instance_cosa:bool setget set_instance_cosa
+
+func set_instance_cosa(value:bool):
+	instance_cosa = false
+	if value && Engine.editor_hint:
+		pass
+
 func _ready():
 	if pathfinding.is_empty():
 		return
@@ -12,5 +19,6 @@ func _ready():
 		return
 		
 	for child in get_children():
-		child.pathfinding = pathfinder
+		if child is KinematicBody2D:
+			child.pathfinding = pathfinder
 	
