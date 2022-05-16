@@ -85,6 +85,7 @@ position = Vector2( 1548.61, 911.314 )
 position = Vector2( 3954.22, 276.38 )
 
 [node name="PathfindAstar" parent="Environment/TurretSpawn" instance=ExtResource( 8 )]
+tile_data = PoolIntArray( 262184, 0, 0, 262185, 0, 0, 262186, 0, 0, 262187, 0, 0, 262188, 0, 0, 262189, 0, 0, 262190, 0, 0, 262191, 0, 0, 262192, 0, 0, 262193, 0, 0, 262202, 0, 0, 262203, 0, 0, 262204, 0, 0, 262205, 0, 0, 262206, 0, 0, 786464, 0, 0, 786465, 0, 0, 786466, 0, 0, 917523, 0, 0, 917524, 0, 0, 917525, 0, 0, 917526, 0, 0, 917527, 0, 0, 917528, 0, 0, 917529, 0, 0, 917530, 0, 0, 917531, 0, 0, 917532, 0, 0 )
 
 [node name="Ramp" parent="Environment" instance=ExtResource( 7 )]
 show_behind_parent = true
