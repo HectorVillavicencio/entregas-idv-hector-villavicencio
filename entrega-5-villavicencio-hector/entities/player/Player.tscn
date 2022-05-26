@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://entities/player/Player.gd" type="Script" id=1]
 [ext_resource path="res://entities/player/states/WalkState.gd" type="Script" id=2]
@@ -7,10 +7,11 @@
 [ext_resource path="res://entities/player/PlayerProjectile.tscn" type="PackedScene" id=5]
 [ext_resource path="res://entities/player/states/IdleState.gd" type="Script" id=6]
 [ext_resource path="res://assets/textures/player/girl_spritesheet.png" type="Texture" id=7]
-[ext_resource path="res://assets/textures/cannon.png" type="Texture" id=8]
+[ext_resource path="res://assets/textures/player/raygunPurpleBig.png" type="Texture" id=8]
 [ext_resource path="res://entities/player/states/DeadState.gd" type="Script" id=9]
 [ext_resource path="res://entities/player/states/JumpState.gd" type="Script" id=10]
 [ext_resource path="res://entities/player/states/DashState.gd" type="Script" id=11]
+[ext_resource path="res://assets/textures/player/slimeGreen.png" type="Texture" id=12]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 31.6034
@@ -133,6 +134,11 @@ hframes = 15
 vframes = 8
 frame = 46
 region_rect = Rect2( -61.7162, 97.9823, 22.8953, 0 )
+
+[node name="Slime" type="Sprite" parent="."]
+position = Vector2( 0, -48 )
+scale = Vector2( 0.996668, 0.838235 )
+texture = ExtResource( 12 )
 
 [node name="Cannon" type="Sprite" parent="."]
 position = Vector2( 0, -42 )
