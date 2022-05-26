@@ -13,6 +13,7 @@ func enter():
 	parent.velocity.x = 0
 	parent.call_deferred("fire")
 	fire_timer.start()
+	parent._play_animation("alert")
 
 
 func exit():
