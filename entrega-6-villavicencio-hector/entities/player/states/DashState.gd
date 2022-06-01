@@ -3,6 +3,9 @@ extends "res://entities/AbstractState.gd"
 export (float) var dash_time:float = 1.0
 export (float) var speed_multiplier:float = 1.0
 
+
+
+
 var dash_timer:Timer
 
 func _ready():
@@ -12,9 +15,12 @@ func _ready():
 	dash_timer.connect("timeout", self, "_on_dash_timer_timeout")
 
 
+
 func enter():
 	dash_timer.start(dash_time)
 	parent._play_animation("walk", false, 2.0)
+
+
 
 
 func exit():
@@ -33,3 +39,5 @@ func _on_dash_timer_timeout():
 		emit_signal("finished", "idle")
 	else:
 		emit_signal("finished", "walk")
+
+

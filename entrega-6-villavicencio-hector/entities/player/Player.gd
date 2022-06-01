@@ -25,6 +25,7 @@ export (float) var FRICTION_WEIGHT:float = 0.1
 export (int) var gravity = 30
 export (AudioStream) var fire_sfx
 
+
 var projectile_container
 
 var velocity:Vector2 = Vector2.ZERO
